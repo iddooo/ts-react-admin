@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {FC, useState} from 'react';
+import { Layout, Breadcrumb } from 'antd';
+import SiderCustom from './components/SiderCustom';
+import HeaderCustom from './components/HeaderCustom'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const { Content, Footer } = Layout;
+
+
+const App:FC<{}> = ()=>{
+    const [collapsed,setCollapsed] = useState<boolean>(false)
+    
+    function toggle(){
+        setCollapsed(!collapsed)
+    }
+    return (
+        <Layout>
+            <SiderCustom>sidebar</SiderCustom>
+            <Layout>
+                <HeaderCustom toggle={toggle} collapsed={collapsed}></HeaderCustom>
+                <Content>Content</Content>
+                <Footer>Footer</Footer>
+            </Layout>
+        </Layout>
+    )
 }
 
 export default App;
