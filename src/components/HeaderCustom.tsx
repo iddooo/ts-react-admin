@@ -8,7 +8,7 @@ interface HeaderCustomProps {
     toggle: ()=>void
 }
 
-const HeaderCustom = (props:HeaderCustomProps)=>{
+const HeaderCustom:FC<HeaderCustomProps> = (props:HeaderCustomProps):JSX.Element =>{
     return (
         <Header className="header" style={{ padding: 0 }}>
             { React.createElement(props.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,{

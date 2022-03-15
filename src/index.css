@@ -8,6 +8,12 @@ body {
     height: 100%;
 }
 
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .ant-layout {
     height: 100%;
 }

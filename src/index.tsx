@@ -1,17 +1,17 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Page from './Page';
 import reportWebVitals from './reportWebVitals';
-
-import 'antd/dist/antd.css'
+import { AlitaProvider } from 'redux-alita'
 import './styles/antd/index.less';
 import './index.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+//   <React.StrictMode>
+    <AlitaProvider>
+        <Page />
+    </AlitaProvider>
+//   </React.StrictMode>
+  ,document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
